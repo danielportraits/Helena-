@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#3c2419">
+  <meta name="description" content="Un jardín de girasoles hecho con cariño para Helena.">
+  <title>Un jardín para Helena 🌻</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="ambient-glow"></div>
+  <header class="intro">
+    <div class="eyebrow">✦ Un pequeño rincón hecho con cariño ✦</div>
+    <h1>Esto es para ti,<br><span>Helena</span> <span class="heart">♥</span></h1>
+    <p class="instruction">Toca los que quieras 🌻</p>
+    <p class="sub-instruction">Cada girasol guarda algo que quiero decirte.</p>
+    <div class="progress"><span id="opened-count">0</span> de 23 girasoles descubiertos</div>
+  </header>
+
+  <main>
+    <section class="garden-wrap" aria-label="Jardín interactivo de girasoles">
+      <div class="garden-sky" aria-hidden="true"><span class="sun"></span><span class="cloud cloud-one"></span><span class="cloud cloud-two"></span></div>
+      <div class="garden" id="garden"></div>
+      <div class="dog-area" id="dog-area" aria-live="polite">
+        <div class="bark-bubble" id="bark-bubble">¡Guau!</div>
+        <img id="dog" src="perrito-helena.jpg" alt="El perrito de Helena con su pañuelo de colores">
+        <span class="dog-caption">Tu compañero de aventuras 🐾</span>
+      </div>
+      <div class="wood-sign">Un mensaje bonito<br>en cada flor <span>♥</span></div>
+    </section>
+    <p class="hint">🌼 Puedes tocar las flores en el orden que quieras. Cada carta se cerrará solita después de 8 segundos.</p>
+  </main>
+
+  <div class="letter-backdrop" id="letter-backdrop" hidden>
+    <section class="letter" id="letter" role="dialog" aria-modal="true" aria-labelledby="letter-title">
+      <button class="close-letter" id="close-letter" aria-label="Cerrar carta">×</button>
+      <div class="letter-flower">🌻</div>
+      <p class="letter-kicker">Un mensajito para ti</p>
+      <h2 id="letter-title">Helena,</h2>
+      <p class="letter-message" id="letter-message"></p>
+      <div class="letter-heart">♡</div>
+      <div class="timer-track"><span id="timer-bar"></span></div>
+      <p class="timer-label">Esta cartita se quedará contigo unos segunditos…</p>
+    </section>
+  </div>
+
+  <footer>
+    <span>🌻 Hecho con mucho cariño para ti</span>
+    <span>♥ Un girasol, un mensaje y una sonrisa ♥</span>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>

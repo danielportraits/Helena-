@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@500;600;700&display=swap');
+:root{--gold:#ffc83d;--gold2:#f69a19;--green:#285b32;--deep:#382318;--cream:#fff5d9;--rose:#a83b35}
+*{box-sizing:border-box}
+html{min-height:100%;background:#382318}
+body{margin:0;min-height:100vh;color:#fff8e8;font-family:'DM Sans',sans-serif;background:linear-gradient(180deg,#f7a45d 0%,#e57c4e 22%,#426b3d 48%,#24462b 100%);overflow-x:hidden;position:relative}
+.ambient-glow{position:fixed;inset:0;pointer-events:none;background:radial-gradient(ellipse at 50% 12%,#ffe7a855,transparent 40%);z-index:0}
+.intro,main,footer{position:relative;z-index:1}
+.intro{text-align:center;padding:34px 16px 18px;text-shadow:0 2px 10px #4a271a66}
+.eyebrow{font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;color:#fff0bd}
+h1{font-family:'Playfair Display',serif;font-size:clamp(2.6rem,7vw,5.4rem);line-height:.98;margin:13px 0;color:#fff3c7}
+h1 span:not(.heart){color:#fff}
+.heart{font-family:serif;color:#a92e31;font-size:.6em;vertical-align:top}
+.instruction{display:inline-block;margin:12px 0 4px;padding:10px 22px;border-radius:999px;background:#fff3d9;color:#6c3a20;font-weight:700;box-shadow:0 5px 0 #b86b32}
+.sub-instruction{margin:9px 0;color:#fff7df}
+.progress{display:inline-block;margin-top:8px;padding:7px 13px;border:1px solid #fff6d277;border-radius:999px;background:#3b2a1b55;font-size:.8rem}
+.garden-wrap{position:relative;max-width:1180px;margin:0 auto;min-height:540px;padding:130px 16px 35px;overflow:hidden;border-radius:30px 30px 0 0;background:linear-gradient(#f5b56b 0%,#f4c36c 23%,#6b984a 45%,#2b6337 70%,#20462b 100%);box-shadow:0 -10px 60px #ffda7a22 inset}
+.garden-sky{position:absolute;inset:0 0 auto;height:220px;overflow:hidden;background:linear-gradient(#f6a365,#ffdc86 70%,#e6b75a)}
+.sun{position:absolute;top:30px;right:13%;width:90px;height:90px;border-radius:50%;background:#fff2b7;box-shadow:0 0 35px 20px #ffe9a755}
+.cloud{position:absolute;width:140px;height:30px;background:#fff4d477;border-radius:50px;filter:blur(2px)}
+.cloud:before,.cloud:after{content:"";position:absolute;background:inherit;border-radius:50%}
+.cloud:before{width:60px;height:50px;left:20px;top:-20px}.cloud:after{width:70px;height:60px;left:62px;top:-30px}
+.cloud-one{top:70px;left:10%}.cloud-two{top:120px;left:55%;transform:scale(.7)}
+.garden{position:relative;display:grid;grid-template-columns:repeat(7,minmax(40px,1fr));gap:12px 4px;align-items:end;z-index:2}
+.sunflower{position:relative;min-width:0;min-height:108px;border:0;background:transparent;cursor:pointer;display:flex;align-items:flex-end;justify-content:center;padding:0 0 8px;transition:transform .22s ease;touch-action:manipulation;filter:drop-shadow(0 5px 2px #17341b55)}
+.sunflower:hover{transform:translateY(-5px) scale(1.04)}.sunflower:focus-visible{outline:3px solid white;outline-offset:3px;border-radius:15px}
+.stem{position:absolute;bottom:0;left:50%;height:58px;width:7px;border-radius:9px;background:linear-gradient(90deg,#2d652d,#77a83f,#27532c);transform:translateX(-50%);z-index:-1}
+.leaf{position:absolute;bottom:25px;left:calc(50% - 22px);width:27px;height:13px;background:#4e8b35;border-radius:100% 0 100% 0;transform:rotate(15deg)}
+.leaf.right{left:calc(50% - 3px);bottom:39px;transform:scaleX(-1) rotate(10deg)}
+.flower-head{position:relative;display:block;width:clamp(48px,6.6vw,76px);height:clamp(48px,6.6vw,76px);margin-bottom:42px;transition:transform .35s cubic-bezier(.2,1.6,.4,1);z-index:1}
+.petal-ring{position:absolute;inset:0;border-radius:50%;background:repeating-conic-gradient(from 0deg,#ffd83f 0deg 11deg,#f8a91e 11deg 18deg,#ffe56a 18deg 24deg);mask:radial-gradient(circle at center,transparent 0 22%,#000 24% 100%);-webkit-mask:radial-gradient(circle at center,transparent 0 22%,#000 24% 100%)}
+.flower-center{position:absolute;inset:29%;border-radius:50%;background:radial-gradient(circle at 35% 30%,#9a5b26,#542b19 70%);border:3px dotted #d99a37}
+.sunflower:nth-child(3n) .flower-head{transform:scale(.82) rotate(-10deg)}.sunflower:nth-child(4n) .flower-head{transform:scale(1.08) rotate(8deg)}.sunflower:nth-child(5n) .flower-head{margin-bottom:56px}
+.sunflower.blooming{animation:rise .8s ease both}.sunflower.blooming .flower-head{transform:translateY(-12px) scale(1.2) rotate(9deg)}
+.sunflower.discovered .flower-center{box-shadow:0 0 0 3px #ffe58b}
+@keyframes rise{0%{transform:translateY(0)}45%{transform:translateY(-17px)}100%{transform:translateY(0)}}
+.dog-area{position:absolute;z-index:5;right:14px;bottom:10px;width:clamp(125px,19vw,220px);text-align:center;pointer-events:none}
+#dog{display:block;width:100%;max-height:250px;object-fit:contain;mix-blend-mode:normal;border-radius:45% 45% 20% 20%;filter:saturate(1.15) contrast(1.04) drop-shadow(0 7px 5px #1a2e1a66);animation:dog-idle 3s ease-in-out infinite;transform-origin:50% 90%}
+.dog-caption{display:inline-block;margin-top:4px;font-size:.72rem;background:#2d4d2bd9;padding:6px 10px;border-radius:999px}
+.bark-bubble{position:absolute;right:65%;top:0;background:#fff3d7;color:#7b3d22;padding:9px 12px;border:2px solid #7b3d22;border-radius:18px 18px 18px 3px;font-weight:700;opacity:0;transform:scale(.6) rotate(-8deg);z-index:2}
+.dog-area.barking #dog{animation:dog-bark .22s ease-in-out 6}
+.dog-area.barking .bark-bubble{animation:bubble-pop 1.4s ease both}
+@keyframes dog-idle{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-5px) rotate(1deg)}}
+@keyframes dog-bark{0%,100%{transform:translateY(0) rotate(0) scale(1)}50%{transform:translateY(-7px) rotate(-2deg) scale(1.035)}}
+@keyframes bubble-pop{0%{opacity:0;transform:scale(.6) rotate(-8deg)}15%,80%{opacity:1;transform:scale(1) rotate(0)}100%{opacity:0;transform:scale(.8) translateY(-10px)}}
+.wood-sign{position:absolute;left:18px;bottom:18px;background:linear-gradient(135deg,#75462a,#482a1d);border:4px solid #99633a;border-radius:5px;padding:12px 18px;transform:rotate(-3deg);font-family:'Playfair Display',serif;box-shadow:0 7px 0 #243b23;color:#ffe5a5;text-align:center;z-index:4}.wood-sign span{display:block;color:#ffb2a3}
+.hint{text-align:center;margin:14px auto 35px;padding:0 16px;color:#fff5dc;font-size:.9rem}
+footer{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;text-align:center;padding:22px 15px 30px;background:#281b16d9;color:#ffe9c1;font-size:.8rem}
+.letter-backdrop{position:fixed;inset:0;z-index:20;background:#1c2119b8;backdrop-filter:blur(5px);display:grid;place-items:center;padding:18px}
+.letter-backdrop[hidden]{display:none}
+.letter{position:relative;width:min(440px,100%);padding:35px 28px 25px;text-align:center;color:#673d25;background:linear-gradient(135deg,#fff5d9,#f8dca3);border:7px double #d7a453;border-radius:7px;box-shadow:0 20px 70px #0008;animation:letter-open .55s cubic-bezier(.2,1.4,.4,1) both}
+.letter:before{content:"";position:absolute;inset:8px;border:1px solid #d4a66d;pointer-events:none}
+@keyframes letter-open{from{opacity:0;transform:translateY(35px) scale(.75) rotate(-5deg)}to{opacity:1;transform:translateY(0) scale(1) rotate(0)}}
+.close-letter{position:absolute;right:10px;top:8px;border:0;background:transparent;font-size:1.8rem;color:#8a4e2e;cursor:pointer}
+.letter-flower{font-size:2.4rem}.letter-kicker{font-size:.72rem;letter-spacing:.13em;text-transform:uppercase;color:#9a6741}
+.letter h2{font-family:'Playfair Display',serif;font-size:1.8rem;margin:8px 0}
+.letter-message{font-family:'Playfair Display',serif;font-size:clamp(1.3rem,4vw,1.7rem);line-height:1.35;min-height:85px;display:grid;place-items:center;margin:12px 0}
+.letter-heart{font-size:1.6rem;color:#bb4b40}.timer-track{height:5px;background:#e4c79b;border-radius:9px;overflow:hidden;margin-top:18px}.timer-track span{display:block;width:100%;height:100%;background:#b96b32;transform-origin:left;animation:countdown 8s linear forwards}
+@keyframes countdown{to{transform:scaleX(0)}}
+.timer-label{font-size:.72rem;color:#98704c}
+@media(max-width:700px){.intro{padding-top:27px}.garden-wrap{min-height:560px;padding:120px 8px 30px;border-radius:18px 18px 0 0}.garden{grid-template-columns:repeat(5,minmax(0,1fr));gap:8px 1px}.sunflower{min-height:95px}.flower-head{width:clamp(43px,10vw,65px);height:clamp(43px,10vw,65px);margin-bottom:38px}.stem{height:50px}.leaf{bottom:21px}.leaf.right{bottom:32px}.dog-area{right:4px;bottom:8px;width:120px}.dog-caption{font-size:.62rem}.wood-sign{left:7px;bottom:14px;font-size:.76rem;padding:8px 10px}.garden-sky{height:190px}.sun{width:60px;height:60px}.hint{font-size:.8rem}}
+@media(max-width:380px){.garden{grid-template-columns:repeat(4,minmax(0,1fr))}.dog-area{width:105px}.wood-sign{max-width:120px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition:none!important}}
